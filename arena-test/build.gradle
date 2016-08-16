@@ -1,0 +1,5 @@
+dependencies {
+     compile project(':arena-utils')
+
+    testCompile "org.testng:testng:$testngVersion"
+}

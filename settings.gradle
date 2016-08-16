@@ -1,0 +1,4 @@
+rootProject.name = 'arena'
+include 'arena-utils'
+include 'arena-test'
+

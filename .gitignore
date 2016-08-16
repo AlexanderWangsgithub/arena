@@ -1,0 +1,16 @@
+# General
+.DS_Store
+*.py[cod]
+gradle*
+.gradle
+.gradletasknamecache
+
+# IntelliJ IDEA
+*.iml
+.idea
+
+# Directories
+/build
+/*/build
+/dist
+/*/dist

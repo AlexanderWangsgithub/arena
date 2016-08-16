@@ -1,0 +1,29 @@
+allprojects {
+    group 'com.arena'
+    version '1.0-SNAPSHOT'
+
+
+    ext {
+
+        jdbcVersion = '1.0.3'
+        redisVersion = '2.6.2'
+        testngVersion = '6.1.1'
+        mysqlVersion = '5.1.35'
+    }
+
+    subprojects {
+        apply plugin: 'java'
+
+        compileJava {
+            sourceCompatibility = 1.8
+            targetCompatibility = 1.8
+            options.compilerArgs << '-parameters'
+            options.fork = true
+            options.forkOptions.executable = 'javac'
+        }
+        repositories {
+            mavenCentral()
+        }
+    }
+
+}
