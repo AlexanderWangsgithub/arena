@@ -7,7 +7,7 @@ import java.util.Date;
 /**
  * Created by wanggang on 8/16/16.
  */
-public class DateUtils {
+public final class ADate {
 
     public static LocalDateTime toLocalDateTime(Calendar calendar) {
         return toLocalDateTime(calendar.getTime());

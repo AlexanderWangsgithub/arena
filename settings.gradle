@@ -1,4 +1,8 @@
 rootProject.name = 'arena'
 include 'arena-utils'
 include 'arena-test'
+include 'arena-core'
+include 'arena-register'
+include 'arena-rpc'
+include 'arena-core'
 

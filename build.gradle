@@ -1,8 +1,5 @@
 allprojects {
-    group 'com.arena'
-    version '1.0-SNAPSHOT'
-
-
+    apply plugin: 'maven'
     ext {
 
         jdbcVersion = '1.0.3'
@@ -10,20 +7,58 @@ allprojects {
         testngVersion = '6.1.1'
         mysqlVersion = '5.1.35'
     }
+}
 
-    subprojects {
-        apply plugin: 'java'
+subprojects {
+    apply plugin: 'java'
 
-        compileJava {
-            sourceCompatibility = 1.8
-            targetCompatibility = 1.8
-            options.compilerArgs << '-parameters'
-            options.fork = true
-            options.forkOptions.executable = 'javac'
-        }
+    compileJava {
+        sourceCompatibility = 1.8
+        targetCompatibility = 1.8
+        options.compilerArgs << '-parameters'
+        options.fork = true
+        options.forkOptions.executable = 'javac'
+    }
+
+    repositories {
+        mavenLocal()
+        maven { url "http://maven.dev.elenet.me/nexus/content/groups/public/" }
+        maven { url "http://repo.maven.apache.org/maven2" }
+    }
+
+    //发布source包
+    task sourcesJar(type: Jar, dependsOn: classes) {
+        classifier = 'sources'
+        from sourceSets.main.allSource
+    }
+    artifacts {
+        archives sourcesJar
+    }
+
+  /*
+   uploadArchives {
         repositories {
-            mavenCentral()
+            mavenDeployer {
+                try {
+                    repository(url: RELEASE_REPOSITORY_URL) {
+                        authentication(
+                                userName: NEXUS_USERNAME,
+                                password: NEXUS_PASSWORD)
+                    }
+                    snapshotRepository(url: SNAPSHOT_REPOSITORY_URL) {
+                        authentication(
+                                userName: NEXUS_USERNAME,
+                                password: NEXUS_PASSWORD)
+                    }
+                } catch (Exception e) {
+                    println(e.getMessage())
+                }
+
+                pom.version = VERSION
+                pom.groupId = GROUP
+            }
         }
     }
+    */
 
 }
