@@ -1,0 +1,12 @@
+dependencies {
+    compile project(':arena-utils')
+
+    compile 'cglib:cglib:3.2.4'
+    compile 'com.google.guava:guava:21.0'
+    compile 'org.projectlombok:lombok:1.16.8'
+    compile 'org.hibernate:hibernate-validator:5.2.4.Final'
+    compile 'javax.el:javax.el-api:2.2.4'
+    compile 'com.fasterxml.jackson.core:jackson-databind:2.4.4'
+
+    testCompile "org.testng:testng:$testngVersion"
+}

@@ -1,4 +1,4 @@
-package com.github.alexanderwangsgithub.arena.infra;
+package com.github.alexanderwangsgithub.arena.execute;
 
 /**
  * arena
@@ -6,7 +6,7 @@ package com.github.alexanderwangsgithub.arena.infra;
  * @author Alexander Wang
  * @bio https://alexanderwangsgithub.github.io/
  * @email alexanderwangwork@outlook.com
- * @date 18/01/2017
+ * @date 19/01/2017
  */
-public class Task {
+public class ITaskExecutor {
 }

@@ -1,6 +1,13 @@
 package com.github.alexanderwangsgithub.arena.constraint;
 
-
+/**
+ * arena
+ *
+ * @author Alexander Wang
+ * @bio https://alexanderwangsgithub.github.io/
+ * @email alexanderwangwork@outlook.com
+ * @date 18/01/2017
+ */
 public enum RPCStatus {
     /** 业务异常*/
     business_exec,
